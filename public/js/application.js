@@ -1,8 +1,13 @@
 $(document).ready(function () {
-  $("#die").on("click", function(event){
+  $("die").click(function(event) {  
     event.preventDefault();
     var roll = Math.floor(Math.random()*6) +1;
     console.log(roll)
+    $.post("/rolls", function(response){
+      // console.log(response);
+      var die_response = ($(response).find("#die"));
+    $("#die").replaceWith(die_response);
+    });
   });
 
   // PSEUDO-CODE:
