@@ -1,8 +1,8 @@
 $(document).ready(function () {
-  console.log("The javascript is running");
   $("#die").on("click", function(event){
     event.preventDefault();
-    console.log("We supposedly prevented the default");
+    var roll = Math.floor(Math.random()*6) +1;
+    console.log(roll)
   });
 
   // PSEUDO-CODE:
